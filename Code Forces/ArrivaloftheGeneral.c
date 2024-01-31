@@ -8,28 +8,24 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    int max=arr[0];
-    int min=arr[0];
-    int indmax,indmin;
+    int indmax=0;
+    int indmin=0;
     for(int i=1;i<n;i++)
     {
-        if (arr[i]>max)
+        if (arr[i]>arr[indmax])
         {
-            max=arr[i];
             indmax=i;
         }
-        else if (arr[i]<=min)
+        if (arr[i]<=arr[indmin])
         {
-            min=arr[i];
             indmin=i;
         }
     }
-    // printf("%d %d \n",max,indmax);
-    // printf("%d %d \n",min,indmin);
+    
     int ans=indmax+(n-1-indmin);
     if (indmin<indmax)
-    printf("%d",ans-1);
-    else
+    {ans--;}
+    
     printf("%d",ans);
 }
 
